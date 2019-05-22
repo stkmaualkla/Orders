@@ -97,6 +97,15 @@
 						"master",
 						"object"
 					]
+				},
+				{
+					"name": "Info",
+					"pattern": "Info",
+					"target": [
+						"master",
+						"object",
+						"Info"
+					]
 				}
 			],
 			"targets": {
@@ -119,6 +128,11 @@
 				"notFound": {
 					"viewName": "NotFound",
 					"viewId": "notFound"
+				},
+				"Info": {
+					"viewType": "XML",
+					"viewName": "Info",
+					"controlAggregation": "endColumnPages"
 				}
 			}
 		}
