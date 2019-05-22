@@ -1,18 +1,12 @@
-<mvc:View
-	controllerName="opensap.orders.Orders.controller.App"
-	displayBlock="true"
-	height="100%"
-	xmlns="sap.m"
-	xmlns:f="sap.f"
-	xmlns:mvc="sap.ui.core.mvc">
-	<App
-		id="app"
-		busy="{appView>/busy}"
-		busyIndicatorDelay="{appView>/delay}">
-		<f:FlexibleColumnLayout
-			id="layout"
-			layout="{appView>/layout}"
-			backgroundDesign="Translucent">
-		</f:FlexibleColumnLayout>
+<mvc:View xmlns="sap.m" xmlns:f="sap.f" xmlns:mvc="sap.ui.core.mvc" controllerName="opensap.orders.Orders.controller.App" displayBlock="true" height="100%">
+	<App id="app" busy="{appView>/busy}" busyIndicatorDelay="{appView>/delay}">
+		<pages>
+			<Page xmlns="sap.m" id="pageId" title="INTERNATIONAL EXPRESS ORDERS" floatingFooter="true" backgroundDesign="Transparent" titleLevel="H1">
+				<content>
+					<Image src="http://pluspng.com/img-png/free-shipping-png-satisfaction-guaranteeseal-jpg-free-shipping-banner-1-png-600.png" width="100%" height="160px" id="image0"/>
+				</content>
+				<f:FlexibleColumnLayout id="layout" layout="{appView>/layout}" backgroundDesign="Translucent"/>
+			</Page>
+		</pages>
 	</App>
 </mvc:View>
