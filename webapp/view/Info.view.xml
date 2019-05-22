@@ -5,7 +5,7 @@
 				<content>
 				    <List noDataText="Drop list items here" items="{/ProductSet}" id="list0">
 				        <items>
-				            <StandardListItem type="Navigation" title="{Name}" description="Description: {Description}" icon="sap-icon://picture" id="item0___list0_0"/>
+				            <StandardListItem type="Navigation" title="{Name}" description="Description: {Description}" icon="sap-icon://product" id="item0___list0_0"/>
 				        </items>
 				    </List>
 				</content>
