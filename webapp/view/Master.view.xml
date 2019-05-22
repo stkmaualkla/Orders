@@ -20,11 +20,14 @@
 				id="list"
 				width="auto"
 				class="sapFDynamicPageAlignContent"
-				items="{
+					items="{
 					path: '/SalesOrderSet',
 					sorter: {
-						path: 'CustomerName',
-						descending: false
+						path: 'CreatedAt',
+						descending: true
+					},
+					parameters: {
+						'expand': 'ToBusinessPartner'
 					},
 					groupHeaderFactory: '.createGroupHeader'
 				}"
@@ -91,6 +94,26 @@
 							formatter: '.formatter.currencyValue'
 						}"
 						numberUnit="{CurrencyCode}">
+						<ObjectAttribute text="{
+							path: 'CreatedAt',
+							type: 'sap.ui.model.type.Date',
+							formatOptions: {
+								style: 'short'
+							}
+						}"/>
+						<ObjectAttribute text="{ToBusinessPartner/BusinessPartnerID}"/>
+						<firstStatus>
+							<ObjectStatus
+								title ="{ToBusinessPartner/Address/Country}"
+								text="{ToBusinessPartner/Address/City}"/>
+						</firstStatus>
+						<markers>
+							<ObjectMarker type="{=
+								${ToBusinessPartner/Address/Country} === 'MX' &amp;&amp;
+								${ToBusinessPartner/Address/City} ==='Mexiko City'
+							 	? 'Favorite' : 'Flagged'
+							 }"/>
+						</markers>
 					</ObjectListItem>
 				</items>
 			</List>
