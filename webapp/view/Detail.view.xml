@@ -26,7 +26,7 @@
 					</Column>
 				</columns>
 				<items>
-					<ColumnListItem>
+					<ColumnListItem  selected="{= ${ItemPosition} ===${appView>/selectedItemId}}">
 						<cells>
 							<ObjectIdentifier title="{ProductID}" text="{ItemPosition}"/>
 							<ObjectNumber number="{ path: 'NetAmount', formatter: '.formatter.currencyValue' }" unit="{CurrencyCode}"/>

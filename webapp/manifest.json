@@ -53,7 +53,10 @@
 			"libs": {
 				"sap.ui.core": {},
 				"sap.m": {},
-				"sap.f": {}
+				"sap.f": {},
+				"sap.uxap": {},
+				"sap.tnt": {},
+				"sap.suite.ui.commons": {}
 			}
 		},
 		"contentDensities": {
@@ -84,30 +87,26 @@
 				},
 				"async": true
 			},
-			"routes": [
-				{
-					"pattern": "",
-					"name": "master",
-					"target": "master"
-				},
-				{
-					"pattern": "SalesOrderSet/{objectId}",
-					"name": "object",
-					"target": [
-						"master",
-						"object"
-					]
-				},
-				{
-					"name": "Info",
-					"pattern": "Info",
-					"target": [
-						"master",
-						"object",
-						"Info"
-					]
-				}
-			],
+			"routes": [{
+				"pattern": "",
+				"name": "master",
+				"target": "master"
+			}, {
+				"pattern": "SalesOrderSet/{objectId}",
+				"name": "object",
+				"target": [
+					"master",
+					"object"
+				]
+			}, {
+				"name": "Info",
+				"pattern": "SalesOrderSet/{objectId}/Item/{itemPosition}",
+				"target": [
+					"master",
+					"object",
+					"Info"
+				]
+			}],
 			"targets": {
 				"master": {
 					"viewName": "Master",
