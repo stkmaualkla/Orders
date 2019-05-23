@@ -57,7 +57,7 @@
 			<semantic:NegativeAction/>
 		</semantic:negativeAction>
 		<semantic:footerCustomActions>
-			<Button text="{i18n>DetailFooterCancel}"/>
+			<Button text="Cancelar"/>
 		</semantic:footerCustomActions>
 	</semantic:SemanticPage>
 </mvc:View>
