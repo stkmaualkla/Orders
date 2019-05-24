@@ -55,11 +55,11 @@
 				<uxap:subSections>
 					<uxap:ObjectPageSubSection>
 						<uxap:blocks>
-							<FlexBox xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" justifyContent="Center" direction="Column" alignContent="Center" alignItems="Center" cd:w5g.dt.context="/ProductSet">
-								<Label text="Gross Price: {ToHeader/NoteLanguage}"/>
-								<Label text="Net Price: {ToHeaderNote/ToSalesOrderLineItems/NetAmount}"/>
-								<Label text="Tax: {ToSalesOrderLineItems/TaxAmount}"/>
-								<Label text="Quantity: {ToSalesOrderLineItems/Quantity}"/>
+							<FlexBox xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" justifyContent="Center" direction="Column" alignContent="Center" alignItems="Center">
+								<Label text="Gross Price: {ToHeader/GrossAmount}"/>
+								<Label text="Net Price: {ToHeader/NetAmount}"/>
+								<Label text="Tax: {ToHeader/TaxAmount}"/>
+								<Label text="Quantity: {ToHeader/Quantity}"/>
 							</FlexBox>
 						</uxap:blocks>
 					</uxap:ObjectPageSubSection>
