@@ -1,13 +1,11 @@
-<mvc:View controllerName="opensap.orders.Orders.controller.Info" height="100%" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
-	xmlns:uxap="sap.uxap" xmlns:f="sap.f" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form">
-	<uxap:ObjectPageLayout id="objectPageLayout" showTitleInHeaderContent="true" alwaysShowContentHeader="false"
-		preserveHeaderStateOnScroll="false" headerContentPinnable="true" isChildPage="true" enableLazyLoading="false">
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap" xmlns:f="sap.f" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form" controllerName="opensap.orders.Orders.controller.Info" height="100%">
+	<uxap:ObjectPageLayout id="objectPageLayout" showTitleInHeaderContent="true" alwaysShowContentHeader="false" preserveHeaderStateOnScroll="false" headerContentPinnable="true" isChildPage="true" enableLazyLoading="false">
 		<uxap:headerTitle>
 			<uxap:ObjectPageDynamicHeaderTitle>
 				<uxap:breadcrumbs>
 					<Breadcrumbs>
-						<Link text='{SalesOrderID}'/>
-						<Link text='{ItemPosition}'/>
+						<Link text="{SalesOrderID}"/>
+						<Link text="{ItemPosition}"/>
 					</Breadcrumbs>
 				</uxap:breadcrumbs>
 				<uxap:expandedHeading>
@@ -53,6 +51,20 @@
 			</FlexBox>
 		</uxap:headerContent>
 		<uxap:sections>
+			<uxap:ObjectPageSection title="Details">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection>
+						<uxap:blocks>
+							<FlexBox xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" justifyContent="Center" direction="Column" alignContent="Center" alignItems="Center" cd:w5g.dt.context="/ProductSet">
+								<Label text="Gross Price: {ToHeader/NoteLanguage}"/>
+								<Label text="Net Price: {ToHeaderNote/ToSalesOrderLineItems/NetAmount}"/>
+								<Label text="Tax: {ToSalesOrderLineItems/TaxAmount}"/>
+								<Label text="Quantity: {ToSalesOrderLineItems/Quantity}"/>
+							</FlexBox>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
 			<uxap:ObjectPageSection title="{i18n>infoItemDeliveryTitle}">
 				<uxap:subSections>
 					<uxap:ObjectPageSubSection>
