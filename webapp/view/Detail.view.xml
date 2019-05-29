@@ -1,6 +1,6 @@
 <mvc:View xmlns="sap.m" xmlns:semantic="sap.f.semantic" xmlns:tnt="sap.tnt" xmlns:si="sap.suite.ui.commons.statusindicator"
-	xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
-xmlns:control="opensap.orders.Orders.control" controllerName="opensap.orders.Orders.controller.Detail">
+	xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:control="opensap.orders.Orders.control"
+	controllerName="opensap.orders.Orders.controller.Detail">
 	<semantic:SemanticPage id="detailPage" busy="{detailView&gt;/busy}" showFooter="true" busyIndicatorDelay="{detailView&gt;/delay}">
 		<semantic:titleHeading>
 			<Title text="{CustomerName}" level="H2"/>
@@ -12,10 +12,7 @@ xmlns:control="opensap.orders.Orders.control" controllerName="opensap.orders.Ord
 		</semantic:headerContent>
 		<semantic:content>
 			<l:VerticalLayout>
-				<control:OrderPreparations
-					id="orderPreparations"
-					confirm=".onconfirm" />  
-			
+				<control:OrderPreparations id="orderPreparations" confirm=".onconfirm"/>
 				<Table id="lineItemsList" width="auto" items="{ToLineItems}" updateFinished=".onListUpdateFinished"
 					noDataText="{i18n&gt;detailLineItemTableNoDataText}" busyIndicatorDelay="{detailView&gt;/lineItemTableDelay}" mode="SingleSelectMaster"
 					sticky="ColumnHeaders,HeaderToolbar" selectionChange="action"
@@ -24,6 +21,8 @@ xmlns:control="opensap.orders.Orders.control" controllerName="opensap.orders.Ord
 					<headerToolbar>
 						<Toolbar>
 							<Title id="lineItemsTitle" text="{detailView&gt;/lineItemListTitle}" titleStyle="H3" level="H3"/>
+							<ToolbarSpacer/>
+							<Button icon="sap-icon://add" tooltip="{i18n>createButtonTooltip}" press=".onCreate"/>
 						</Toolbar>
 					</headerToolbar>
 					<columns>

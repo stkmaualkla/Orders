@@ -1,0 +1,11 @@
+<mvc:View controllerName="opensap.orders.Orders.controller.Create" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:uxap="sap.uxap">
+	<uxap:ObjectPageLayout id="objectPageLayout" alwaysShowContentHeader="true" isChildPage="true" showFooter="true">
+		<uxap:headerTitle>
+			<uxap:ObjectPageDynamicHeaderTitle>
+				<uxap:heading>
+					<Title text="{i18n>createItemTitle}"/>
+				</uxap:heading>
+			</uxap:ObjectPageDynamicHeaderTitle>
+		</uxap:headerTitle>
+	</uxap:ObjectPageLayout>
+</mvc:View>
