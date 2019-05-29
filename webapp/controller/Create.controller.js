@@ -4,14 +4,13 @@ sap.ui.define([
 ], function (BaseController, MessageToast) {
 	"use strict";
 
-	return BaseController.extend("opensap.orders.Ord.controller.Create", {
+	return BaseController.extend("opensap.orders.Orders.controller.Create", {
 
 		onInit: function () {
 			// create a message manager and register the message model
 			this._oMessageManager = sap.ui.getCore().getMessageManager();
 			this._oMessageManager.registerObject(this.getView(), true);
 			this.setModel(this._oMessageManager.getMessageModel(), "message");
-
 			this.getRouter().getRoute("create").attachPatternMatched(this._onCreateMatched, this);
 		},
 
