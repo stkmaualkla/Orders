@@ -15,11 +15,13 @@
 						<uxap:blocks>
 							<form:SimpleForm editable="true">
 								<Label text="{i18n>createItemProductID}"/>
-								<Input id="productName" required="true"/>
+								<Input id="productName" required="true"
+									value="{ path: 'ProductID', type: 'sap.ui.model.type.String', constraints: { search: '^HT-[0-9]{4}$' } }" change=".onNameChange"/>
 								<Label text="{i18n>createItemDescription}"/>
-								<TextArea/>
+								<TextArea value="{ path: 'Note', type: 'sap.ui.model.type.String' }"/>
 								<Label text="{i18n>createItemQuantityDescription}"/>
-								<Input id="productQuantity" required="true"></Input>
+								<Input id="productQuantity" required="true"
+									value="{ path: 'Quantity', type: 'sap.ui.model.type.Decimal', constraints: { minimum: 1 }, formatOptions: { source: {} } }"/>
 							</form:SimpleForm>
 						</uxap:blocks>
 					</uxap:ObjectPageSubSection>
@@ -31,11 +33,18 @@
 						<uxap:blocks>
 							<form:SimpleForm editable="true">
 								<Label text="{i18n>createItemDeliveryDate}"/>
-								<DatePicker id="deliveryDate" required="true" displayFormat="long"/>
+								<DatePicker id="deliveryDate" required="true" displayFormat="long" value="{ path: 'DeliveryDate', type: 'sap.ui.model.type.DateTime' }"/>
 							</form:SimpleForm>
 						</uxap:blocks>
 					</uxap:ObjectPageSubSection>
 				</uxap:subSections>
+				<uxap:Footer>
+					<OverflowToolbar>
+						<ToolbarSpacer/>
+						<Button id="createButton" type="Emphasized" text="{i18n>createItemSaveButtonText}" enabled="{= !${message>/}.length }" press=".onCreate"/>
+						<Button id="cancelButton" text="{i18n>createItemCancelButtonText}" press=".onCancel"/>
+					</OverflowToolbar>
+				</uxap:Footer>
 			</uxap:ObjectPageSection>
 		</uxap:sections>
 	</uxap:ObjectPageLayout>
