@@ -15,6 +15,10 @@ sap.ui.define([], function () {
 			}
 			return parseFloat(sValue).toFixed(2);
 		},
+		
+convertCurrencyCodeToSymbol: function (sValue) {
+},
+
 		/**
 		 * Converts the delivery status value from the data into a
 		 * number used for the colorScheme propery of the InfoLabel
