@@ -238,6 +238,23 @@ sap.ui.define([
 					}.bind(this)
 				});
 			}.bind(this));
+		},
+		onReorder: function (oEvent) {
+			var oDraggedItem = oEvent.getParameter("draggedControl"),
+				oDroppedItem = oEvent.getParameter("droppedControl"),
+				sDropPosition = oEvent.getParameter("dropPosition"),
+				oList = this.byId("lineItemsList"),
+				// get the index of dragged item
+				iDraggedIndex = oList.indexOfItem(oDraggedItem),
+				// get the index of dropped item
+				iDroppedIndex = oList.indexOfItem(oDroppedItem),
+				// get the new dropped item index
+				iNewDroppedIndex = iDroppedIndex + (sDropPosition === "Before" ? 0 : 1) + (iDraggedIndex < iDroppedIndex ? -1 : 0);
+
+			// remove the dragged item
+			oList.removeItem(oDraggedItem);
+			// insert the dragged item on the new drop index
+			oList.insertItem(oDraggedItem, iNewDroppedIndex);
 		}
 	});
 });

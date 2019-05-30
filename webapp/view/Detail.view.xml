@@ -48,7 +48,11 @@
 						</Column>
 					</columns>
 					<dragDropConfig>
-						<dnd:DragInfo sourceAggregation="items"/>
+						<dnd:DragDropInfo
+							sourceAggregation="items"
+							targetAggregation="items"
+							dropPosition="Between"
+							drop=".onReorder"/>
 					</dragDropConfig>
 					<items>
 						<ColumnListItem selected="{= ${ItemPosition} ===${appView>/selectedItemId}}" type="Navigation">
