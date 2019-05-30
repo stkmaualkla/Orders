@@ -15,9 +15,17 @@ sap.ui.define([], function () {
 			}
 			return parseFloat(sValue).toFixed(2);
 		},
-		
-convertCurrencyCodeToSymbol: function (sValue) {
-},
+
+		convertCurrencyCodeToSymbol: function (sValue) {
+			switch (sValue) {
+			case "USD":
+				return "$";
+			case "EUR":
+				return "€";
+			default:
+				return sValue;
+			}
+		},
 
 		/**
 		 * Converts the delivery status value from the data into a
